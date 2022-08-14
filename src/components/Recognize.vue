@@ -3,7 +3,7 @@
 <div>
     <p id="letter_p"> {{letter}}</p>
     <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
-    <button @click="check_answer">Check Answer</button>
+    <button @click="check_answer" id="answer_btn">Check Answer</button>
 </div>
 </template>
 
@@ -58,13 +58,37 @@ div {
     display: flex;
     flex-direction: column;
     justify-content:  center;
-    align-items: center;
+    align-items: stretch;
     gap: 10px;
 }
 
 #letter_p {
     font-size: 100px;
     font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    text-align: center;
+}
+
+#answer_btn{
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px transparent;
+    background-color: turquoise;
+    cursor: pointer;
+}
+
+#answer_btn:hover{
+    background-color: #00b8d4;
+}
+
+#answer{
+    font-size: 20px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    text-align: center;
 }
 
 </style>
