@@ -2,7 +2,8 @@
 <template>
 <div>
     <p id="letter_p"> {{letter}}</p>
-    <input type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
+    <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
+    <button @click="check_answer">Check Answer</button>
 </div>
 </template>
 
@@ -38,6 +39,15 @@
         return keys[keys.length * Math.random() << 0];
     };
 
+    function check_answer () {
+        if (answer.value == BASIC_ROMAJI[letter.value]) {
+            alert("Correct!");
+            letter.value = random_letter();
+        } else {
+            alert("Incorrect!");
+        }
+    }
+
     letter.value = random_letter();
 
 </script>
@@ -45,15 +55,16 @@
 
 <style>
 div {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content:  center;
+    align-items: center;
+    gap: 10px;
 }
 
 #letter_p {
     font-size: 100px;
     font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    margin-bottom: 10px;
 }
 
 </style>
