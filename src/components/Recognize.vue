@@ -1,6 +1,9 @@
 
 <template>
 <div>
+    <transition name="bounce">
+        <p id="result_p" v-if="result" :style="{color:res_color}"> {{result}} </p>
+    </transition>
     <p id="letter_p"> {{letter}}</p>
     <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
     <button @click="check_answer" id="answer_btn">Check Answer</button>
@@ -33,6 +36,8 @@
         };
 
     let letter = ref(null);
+    let result = ref(null);
+    let res_color = ref(null);
 
     function random_letter () {
         var keys = Object.keys(BASIC_ROMAJI);
@@ -40,11 +45,13 @@
     };
 
     function check_answer () {
+        result.value = null
         if (answer.value == BASIC_ROMAJI[letter.value]) {
-            alert("Correct!");
-            letter.value = random_letter();
+            setTimeout(() => result.value = "Correct!", 0.5);
+            res_color.value = "green";
         } else {
-            alert("Incorrect!");
+            setTimeout(() => result.value = "Incorrect!", 0.5);
+            res_color.value = "red";
         }
     }
 
@@ -66,6 +73,13 @@ div {
     font-size: 100px;
     font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     text-align: center;
+}
+
+#result_p {
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    color: red;
 }
 
 #answer_btn{
@@ -90,5 +104,25 @@ div {
     border-bottom: 1px solid black;
     text-align: center;
 }
+
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 </style>
