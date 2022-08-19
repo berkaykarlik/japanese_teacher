@@ -1,4 +1,3 @@
-
 <template>
 <div>
     <transition name="bounce">
@@ -9,7 +8,6 @@
     <button @click="check_answer" id="answer_btn">Check Answer</button>
 </div>
 </template>
-
 
 <script setup>
     import { ref } from 'vue';
@@ -47,10 +45,18 @@
     function check_answer () {
         result.value = null
         if (answer.value == BASIC_ROMAJI[letter.value]) {
-            setTimeout(() => result.value = "Correct!", 0.5);
+            setTimeout(() => {
+                result.value = "Correct!";
+                letter.value = random_letter();
+                setTimeout(() => {result.value= null},1000);
+            },100);
             res_color.value = "green";
+
         } else {
-            setTimeout(() => result.value = "Incorrect!", 0.5);
+            setTimeout(() => {
+                result.value = "Incorrect!";
+                setTimeout(() => {result.value= null},1000);
+            },100);
             res_color.value = "red";
         }
     }
@@ -58,7 +64,6 @@
     letter.value = random_letter();
 
 </script>
-
 
 <style>
 div {
@@ -124,5 +129,5 @@ div {
   }
 }
 
-
 </style>
+
