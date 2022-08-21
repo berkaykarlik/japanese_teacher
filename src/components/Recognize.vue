@@ -13,24 +13,28 @@
 
 <script setup>
     import { ref } from 'vue';
-    import  {HIRAGANA_ROMAJI, hira2kata} from '@/assets/js/jp_alphabet.js';
+    import  {HIRAGANA_ROMAJI, hira2kata, kata2hira} from '@/assets/js/jp_alphabet.js';
 
-    // from https://github.com/WaniKani/WanaKana/blob/master/src/utils/kanaToRomajiMap.js
-
-
+    let alphabet = ref('hiragana');
     let letter = ref(null);
     let result = ref(null);
     let res_color = ref(null);
     let answer = ref(null);
 
+
     function random_letter () {
-        var keys = Object.keys(HIRAGANA_ROMAJI);
-        return keys[keys.length * Math.random() << 0];
+        const keys = Object.keys(HIRAGANA_ROMAJI);
+        let rand_letter = keys[keys.length * Math.random() << 0]
+        if (alphabet.value == 'katakana')
+          rand_letter = hira2kata(rand_letter);
+        return rand_letter;
     };
+
 
     function check_answer () {
         result.value = null
-        if (answer.value == HIRAGANA_ROMAJI[letter.value]) {
+        let letter_val =  alphabet.value == 'hiragana' ? letter.value : kata2hira(letter.value);
+        if (answer.value == HIRAGANA_ROMAJI[letter_val]) {
             setTimeout(() => {
                 result.value = "Correct!";
                 letter.value = random_letter();
@@ -45,7 +49,7 @@
             },100);
             res_color.value = "red";
         }
-    }
+    };
 
     letter.value = random_letter();
 
