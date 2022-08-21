@@ -13,7 +13,7 @@
 
 <script setup>
     import { ref } from 'vue';
-    import  {HIRAGANA_ROMAJI} from '@/assets/js/jp_alphabet.js';
+    import  {HIRAGANA_ROMAJI, hira2kata} from '@/assets/js/jp_alphabet.js';
 
     // from https://github.com/WaniKani/WanaKana/blob/master/src/utils/kanaToRomajiMap.js
 
