@@ -13,7 +13,7 @@
 
 <script setup>
     import { ref } from 'vue';
-    import  {BASIC_ROMAJI} from '@/assets/js/jp_alphabet.js';
+    import  {HIRAGANA_ROMAJI} from '@/assets/js/jp_alphabet.js';
 
     // from https://github.com/WaniKani/WanaKana/blob/master/src/utils/kanaToRomajiMap.js
 
@@ -24,13 +24,13 @@
     let answer = ref(null);
 
     function random_letter () {
-        var keys = Object.keys(BASIC_ROMAJI);
+        var keys = Object.keys(HIRAGANA_ROMAJI);
         return keys[keys.length * Math.random() << 0];
     };
 
     function check_answer () {
         result.value = null
-        if (answer.value == BASIC_ROMAJI[letter.value]) {
+        if (answer.value == HIRAGANA_ROMAJI[letter.value]) {
             setTimeout(() => {
                 result.value = "Correct!";
                 letter.value = random_letter();
