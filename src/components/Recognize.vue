@@ -1,19 +1,23 @@
 <template>
-<div>
-    <transition name="bounce">
-        <p id="result_p" v-if="result" :style="{color:res_color}"> {{result}} </p>
-    </transition>
-    <transition name="fade" mode="out-in">
-        <p id="letter_p" :key="letter"> {{letter}}</p>
-    </transition>
-    <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
-    <button @click="check_answer" id="answer_btn">Check Answer</button>
-</div>
+  <div id="recogdiv">
+      <transition name="bounce">
+          <p id="result_p" v-if="result" :style="{color:res_color}"> {{result}} </p>
+      </transition>
+      <transition name="fade" mode="out-in">
+          <p id="letter_p" :key="letter"> {{letter}}</p>
+      </transition>
+      <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
+      <button @click="check_answer" id="answer_btn">Check Answer</button>
+      <Toggle :opt1="'hiragana'" :opt2="'katakana'" v-model="alphabet" />
+      <p>{{alphabet}}</p>
+  </div>
 </template>
 
 <script setup>
     import { ref } from 'vue';
     import  {HIRAGANA_ROMAJI, hira2kata, kata2hira} from '@/assets/js/jp_alphabet.js';
+    import Toggle from '@/components/Toggle.vue'
+
 
     let alphabet = ref('hiragana');
     let letter = ref(null);
@@ -56,7 +60,7 @@
 </script>
 
 <style>
-div {
+#recogdiv {
     display: flex;
     flex-direction: column;
     justify-content:  center;
