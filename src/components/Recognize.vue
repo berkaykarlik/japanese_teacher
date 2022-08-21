@@ -9,12 +9,11 @@
       <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
       <button @click="check_answer" id="answer_btn">Check Answer</button>
       <Toggle :opt1="'hiragana'" :opt2="'katakana'" v-model="alphabet" />
-      <p>{{alphabet}}</p>
   </div>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
+    import { ref, watch } from 'vue';
     import  {HIRAGANA_ROMAJI, hira2kata, kata2hira} from '@/assets/js/jp_alphabet.js';
     import Toggle from '@/components/Toggle.vue'
 
@@ -33,6 +32,14 @@
           rand_letter = hira2kata(rand_letter);
         return rand_letter;
     };
+
+
+    watch(alphabet, (alphabet) => {
+      if (alphabet == "hiragana")
+          letter.value = kata2hira(letter.value);
+      else
+          letter.value = hira2kata(letter.value);
+    });
 
 
     function check_answer () {

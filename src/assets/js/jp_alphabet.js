@@ -1,6 +1,7 @@
 
 const UNICODE_HIRAGANA_START = 0x3041;
 const UNICODE_KATAKANA_START =  0x30A1;
+const HIRA2KATA_OFFSET = UNICODE_KATAKANA_START - UNICODE_HIRAGANA_START;
 
 const HIRAGANA_ROMAJI = {
     あ:'a',    い:'i',   う:'u',   え:'e',    お:'o',
@@ -24,12 +25,16 @@ const HIRAGANA_ROMAJI = {
 
 
 function hira2kata(ch){
-    const code = ch.charCodeAt(0) + (UNICODE_KATAKANA_START - UNICODE_HIRAGANA_START);
+    console.log("ch",ch.charCodeAt(0));
+    const code = ch.charCodeAt(0) + HIRA2KATA_OFFSET;
+    console.log("converted ch",code);
     return String.fromCharCode(code);
 };
 
 function kata2hira(ch){
-    const code = ch.charCodeAt(0) - (UNICODE_KATAKANA_START - UNICODE_HIRAGANA_START);
+    console.log("ch",ch.charCodeAt(0));
+    const code = ch.charCodeAt(0) - HIRA2KATA_OFFSET ;
+    console.log("converted ch",code);
     return String.fromCharCode(code);
 };
 
