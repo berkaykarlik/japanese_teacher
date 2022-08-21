@@ -33,4 +33,4 @@ function kata2hira(ch){
     return String.fromCharCode(code);
 };
 
-export  {HIRAGANA_ROMAJI, hira2kata};
+export  {HIRAGANA_ROMAJI, hira2kata, kata2hira};
