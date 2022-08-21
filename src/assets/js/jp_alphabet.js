@@ -25,7 +25,12 @@ const HIRAGANA_ROMAJI = {
 
 function hira2kata(ch){
     const code = ch.charCodeAt(0) + (UNICODE_KATAKANA_START - UNICODE_HIRAGANA_START);
-    return String.fromCharCode(code)
-}
+    return String.fromCharCode(code);
+};
+
+function kata2hira(ch){
+    const code = ch.charCodeAt(0) - (UNICODE_KATAKANA_START - UNICODE_HIRAGANA_START);
+    return String.fromCharCode(code);
+};
 
 export  {HIRAGANA_ROMAJI, hira2kata};
