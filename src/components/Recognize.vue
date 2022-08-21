@@ -3,7 +3,9 @@
     <transition name="bounce">
         <p id="result_p" v-if="result" :style="{color:res_color}"> {{result}} </p>
     </transition>
-    <p id="letter_p"> {{letter}}</p>
+    <transition name="fade" mode="out-in">
+        <p id="letter_p" :key="letter"> {{letter}}</p>
+    </transition>
     <input v-model="answer" type="text" id="answer" name="answer_textbox" placeholder="enter romaji here...">
     <button @click="check_answer" id="answer_btn">Check Answer</button>
 </div>
@@ -127,6 +129,16 @@ div {
   100% {
     transform: scale(1);
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 </style>
