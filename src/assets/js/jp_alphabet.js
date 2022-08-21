@@ -1,5 +1,5 @@
 
-    const BASIC_ROMAJI = {
+    const HIRAGANA_ROMAJI = {
         あ:'a',    い:'i',   う:'u',   え:'e',    お:'o',
         か:'ka',   き:'ki',  く:'ku',  け:'ke',   こ:'ko',
         さ:'sa',   し:'shi', す:'su',  せ:'se',   そ:'so',
@@ -26,4 +26,4 @@ function get_all_kana_paired(){
     }
 }
 
-export  {BASIC_ROMAJI, get_all_kana_paired};
+export  {HIRAGANA_ROMAJI, get_all_kana_paired};
