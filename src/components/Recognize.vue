@@ -94,7 +94,7 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px transparent;
-    background-color: turquoise;
+    background-color: slategrey;
     cursor: pointer;
 }
 

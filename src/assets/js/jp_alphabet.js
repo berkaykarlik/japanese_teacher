@@ -13,7 +13,7 @@ const HIRAGANA_ROMAJI = {
     ま:'ma',   み:'mi',  む:'mu',  め:'me',   も:'mo',
     ら:'ra',   り:'ri',  る:'ru',  れ:'re',   ろ:'ro',
     や:'ya',   ゆ:'yu',  よ:'yo',
-    わ:'wa',   ゐ:'wi',  ゑ:'we',  を:'wo',
+    わ:'wa', //ゐ:'wi',  ゑ:'we',  を:'wo',
     ん: 'n',
     が:'ga',   ぎ:'gi',  ぐ:'gu',  げ:'ge',   ご:'go',
     ざ:'za',   じ:'ji',  ず:'zu',  ぜ:'ze',   ぞ:'zo',
