@@ -7,7 +7,8 @@ import Tables from '@/components/Tables.vue';
 
 
 const routes = [
-    { path: '/recognize', component: Recognize },
+    { path: '/', redirect: '/recognize'},
+    { path: '/recognize', component: Recognize},
     { path: '/tables', component: Tables },
   ]
 
