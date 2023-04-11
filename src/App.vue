@@ -32,7 +32,7 @@
   left: 0;
   right: 0;
   margin-top: 10px;
-  background-color: slategrey;
+  background-color: #007BFF;
   color: white;
 }
 

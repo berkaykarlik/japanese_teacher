@@ -94,12 +94,12 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px transparent;
-    background-color: slategrey;
+    background-color: #007BFF;
     cursor: pointer;
 }
 
 #answer_btn:hover{
-    background-color: #00b8d4;
+    background-color: #0069D9 ;
 }
 
 #answer{
