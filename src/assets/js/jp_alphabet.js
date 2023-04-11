@@ -3,6 +3,9 @@ const UNICODE_HIRAGANA_START = 0x3041;
 const UNICODE_KATAKANA_START =  0x30A1;
 const HIRA2KATA_OFFSET = UNICODE_KATAKANA_START - UNICODE_HIRAGANA_START;
 
+const vowels = ['a', 'i', 'u', 'e', 'o'];
+const consonants = ['k', 's', 't', 'n', 'h', 'm', 'r', 'y', 'w', ''];
+
 const HIRAGANA_ROMAJI = {
     あ:'a',    い:'i',   う:'u',   え:'e',    お:'o',
     か:'ka',   き:'ki',  く:'ku',  け:'ke',   こ:'ko',
@@ -38,4 +41,4 @@ function kata2hira(ch){
     return String.fromCharCode(code);
 };
 
-export  {HIRAGANA_ROMAJI, hira2kata, kata2hira};
+export  {HIRAGANA_ROMAJI, hira2kata, kata2hira, vowels, consonants};
