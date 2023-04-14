@@ -1,6 +1,6 @@
 # japanese_teacher
 
-This template should help get you started developing with Vue 3 in Vite.
+Japanese alphabet (hiragana/katakana) practice web application.
 
 ## Recommended IDE Setup
 
