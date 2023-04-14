@@ -1,6 +1,6 @@
 # japanese_teacher
 
-Japanese alphabet (hiragana/katakana) practice web application.
+Japanese alphabet (hiragana/katakana) practice web application. 
 
 ## Recommended IDE Setup
 
