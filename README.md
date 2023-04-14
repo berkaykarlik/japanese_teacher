@@ -1,6 +1,7 @@
 # japanese_teacher
 
-Japanese alphabet (hiragana/katakana) practice web application. 
+Japanese alphabet (hiragana/katakana) practice web application.
+Demo available at: https://berkaykarlik.github.io/japanese_teacher/#/recognize
 
 ## Recommended IDE Setup
 
